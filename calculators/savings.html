@@ -1,0 +1,33 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>저축 시나리오 계산기 | 월급계산소</title><meta name="description" content="월 저축액을 50만원, 100만원 늘렸을 때 미래 자산 차이를 비교합니다.">
+<link rel="stylesheet" href="../assets/style.css"></head><body><header><div class="wrap"><nav>
+<a class="brand" href="../index.html"><span class="brand-mark">₩</span><span>월급계산소</span></a>
+<div class="navlinks">
+<a href="../index.html#calculators">계산기</a>
+<a href="../pages/about.html">소개</a>
+<a href="../pages/guide.html">이용안내</a>
+</div>
+</nav></div></header>
+<main><div class="wrap page-hero"><div class="breadcrumb">홈 › 계산기 › 저축 시나리오</div><h1>저축 시나리오 계산기</h1><p>매달 조금 더 모으면 몇 년 뒤 자산이 얼마나 달라지는지 비교합니다.</p></div>
+<div class="wrap calc-layout"><div class="card"><h2>내 조건 입력</h2><div class="fields">
+<div class="field"><label>현재 자산</label><input id="assets" value="0"><span class="unit">만원</span></div>
+<div class="field"><label>현재 월 저축액</label><input id="saving" value="70"><span class="unit">만원</span></div>
+<div class="field"><label>기간</label><input id="years" value="5"><span class="unit">년</span></div>
+<div class="field"><label>예상 연 수익률</label><input id="rate" value="0"><span class="unit">%</span></div>
+</div><button class="calc-button" onclick="calcSav()">비교하기</button></div>
+<div><div class="metrics">
+<div class="metric"><div class="k">현재 속도</div><div class="v" id="base">-</div></div>
+<div class="metric"><div class="k">월 +50만원</div><div class="v" id="p50">-</div><div class="s" id="d50">-</div></div>
+<div class="metric"><div class="k">월 +100만원</div><div class="v" id="p100">-</div><div class="s" id="d100">-</div></div>
+<div class="metric"><div class="k">월 +150만원</div><div class="v" id="p150">-</div><div class="s" id="d150">-</div></div>
+</div><div class="result-note" id="savNote">초기 자산이 작을수록 초반에는 투자수익률보다 매달 들어오는 현금흐름의 영향이 더 크게 느껴질 수 있습니다.</div></div></div></main><footer><div class="wrap footer-grid">
+<div><div class="brand"><span class="brand-mark">₩</span><span>월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p>
+<div class="footer-links"><a href="../pages/about.html">소개</a><a href="../pages/guide.html">이용안내</a><a href="../pages/privacy.html">개인정보처리방침</a><a href="../pages/disclaimer.html">면책안내</a></div>
+</div>
+<div>본 사이트의 계산 결과는 입력값에 따른 단순 시뮬레이션이며 투자, 세무, 대출 또는 부동산 관련 전문적 조언을 의미하지 않습니다. 실제 의사결정 전에는 최신 공식 정보와 개인별 조건을 확인하세요.</div>
+</div></footer>
+<script src="../assets/common.js"></script><script>
+function calcSav(){let a=W.n('assets'),m=W.n('saving'),y=W.n('years'),r=W.n('rate'),b=W.fv(a,m,y,r),v50=W.fv(a,m+50,y,r),v100=W.fv(a,m+100,y,r),v150=W.fv(a,m+150,y,r);
+base.textContent=W.money(b);p50.textContent=W.money(v50);p100.textContent=W.money(v100);p150.textContent=W.money(v150);
+d50.textContent='현재 대비 +'+W.money(v50-b);d100.textContent='현재 대비 +'+W.money(v100-b);d150.textContent='현재 대비 +'+W.money(v150-b);
+savNote.textContent=`${y}년 동안 월 저축액을 100만원 늘리면 입력한 가정에서 현재 속도보다 약 ${W.money(v100-b)} 차이가 납니다.`;}</script></body></html>

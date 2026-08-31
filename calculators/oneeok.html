@@ -1,0 +1,33 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1억 모으기 계산기 | 월급계산소</title><meta name="description" content="현재 자산과 월 저축액으로 1억원까지 얼마나 걸리는지 계산합니다.">
+<link rel="stylesheet" href="../assets/style.css"></head><body><header><div class="wrap"><nav>
+<a class="brand" href="../index.html"><span class="brand-mark">₩</span><span>월급계산소</span></a>
+<div class="navlinks">
+<a href="../index.html#calculators">계산기</a>
+<a href="../pages/about.html">소개</a>
+<a href="../pages/guide.html">이용안내</a>
+</div>
+</nav></div></header>
+<main><div class="wrap page-hero"><div class="breadcrumb">홈 › 계산기 › 1억 모으기</div><h1>1억 모으기 계산기</h1><p>지금부터 1억원까지 걸리는 시간을 계산합니다.</p></div>
+<div class="wrap calc-layout"><div class="card"><h2>내 조건 입력</h2><div class="fields">
+<div class="field"><label>현재 자산</label><input id="assets" value="0"><span class="unit">만원</span></div>
+<div class="field"><label>월 저축액</label><input id="saving" value="100"><span class="unit">만원</span></div>
+<div class="field full"><label>예상 연 수익률</label><input id="rate" value="0"><span class="unit">%</span></div>
+</div><button class="calc-button" onclick="calcOne()">1억까지 계산하기</button></div>
+<div><div class="metrics">
+<div class="metric"><div class="k">1억까지 예상기간</div><div class="v" id="period">-</div></div>
+<div class="metric"><div class="k">5년 뒤 예상자산</div><div class="v" id="five">-</div></div>
+<div class="metric"><div class="k">월 50만원 추가 시</div><div class="v" id="plus50">-</div><div class="s">1억까지 기간</div></div>
+<div class="metric"><div class="k">월 100만원 추가 시</div><div class="v" id="plus100">-</div><div class="s">1억까지 기간</div></div>
+</div><div class="result-note" id="note">월 저축액을 조금만 바꿔도 목표 시점이 크게 달라질 수 있습니다.</div></div></div></main><footer><div class="wrap footer-grid">
+<div><div class="brand"><span class="brand-mark">₩</span><span>월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p>
+<div class="footer-links"><a href="../pages/about.html">소개</a><a href="../pages/guide.html">이용안내</a><a href="../pages/privacy.html">개인정보처리방침</a><a href="../pages/disclaimer.html">면책안내</a></div>
+</div>
+<div>본 사이트의 계산 결과는 입력값에 따른 단순 시뮬레이션이며 투자, 세무, 대출 또는 부동산 관련 전문적 조언을 의미하지 않습니다. 실제 의사결정 전에는 최신 공식 정보와 개인별 조건을 확인하세요.</div>
+</div></footer>
+<script src="../assets/common.js"></script><script>
+const fmt=y=>!Number.isFinite(y)?'계산 불가':(y<1?Math.ceil(y*12)+'개월':y.toFixed(1)+'년');
+function calcOne(){let a=W.n('assets'),m=W.n('saving'),r=W.n('rate'),t=10000;
+let y=W.yearsToGoal(a,m,t,r),y50=W.yearsToGoal(a,m+50,t,r),y100=W.yearsToGoal(a,m+100,t,r);
+period.textContent=fmt(y);five.textContent=W.money(W.fv(a,m,5,r));plus50.textContent=fmt(y50);plus100.textContent=fmt(y100);
+note.textContent=`현재 월 ${W.money(m)} 저축 기준으로 1억원까지 약 ${fmt(y)}이 걸립니다.`;}</script></body></html>

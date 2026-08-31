@@ -1,0 +1,46 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>자산 목표 계산기 | 월급계산소</title><meta name="description" content="현재 자산과 월 저축액을 입력해 목표 자산까지 걸리는 기간과 미래 자산을 계산합니다.">
+<link rel="stylesheet" href="../assets/style.css"></head><body><header><div class="wrap"><nav>
+<a class="brand" href="../index.html"><span class="brand-mark">₩</span><span>월급계산소</span></a>
+<div class="navlinks">
+<a href="../index.html#calculators">계산기</a>
+<a href="../pages/about.html">소개</a>
+<a href="../pages/guide.html">이용안내</a>
+</div>
+</nav></div></header>
+<main><div class="wrap page-hero"><div class="breadcrumb">홈 › 계산기 › 자산 목표</div><h1>자산 목표 계산기</h1><p>지금 속도로 목표금액까지 얼마나 걸리는지 계산합니다.</p></div>
+<div class="wrap calc-layout">
+<div class="card"><h2>내 조건 입력</h2><div class="fields">
+<div class="field"><label>현재 자산</label><input id="assets" value="0"><span class="unit">만원</span></div>
+<div class="field"><label>월 저축액</label><input id="saving" value="70"><span class="unit">만원</span></div>
+<div class="field"><label>월 추가소득</label><input id="extra" value="0"><span class="unit">만원</span></div>
+<div class="field"><label>목표금액</label><input id="target" value="10000"><span class="unit">만원</span></div>
+<div class="field"><label>목표기간</label><input id="years" value="5"><span class="unit">년</span></div>
+<div class="field"><label>예상 연 수익률</label><input id="rate" value="0"><span class="unit">%</span></div>
+</div><button class="calc-button" onclick="calcAsset()">계산하기</button><div class="tiny">입력값은 브라우저 안에서만 계산됩니다.</div></div>
+<div>
+<div class="metrics">
+<div class="metric"><div class="k">목표기간 뒤 예상자산</div><div class="v" id="future">-</div><div class="s" id="futureSub">-</div></div>
+<div class="metric"><div class="k">목표 달성률</div><div class="v" id="ratio">-</div><div class="s">목표금액 대비</div></div>
+<div class="metric"><div class="k">현재 속도로 목표까지</div><div class="v" id="toGoal">-</div><div class="s">단순 추정</div></div>
+<div class="metric"><div class="k">기간 내 필요한 월 적립액</div><div class="v" id="need">-</div><div class="s">현재자산·수익률 반영</div></div>
+</div>
+<div class="progress-shell"><div class="progress-top"><span>목표 진행률</span><span id="ptext">0%</span></div><div class="bar"><div id="pbar"></div></div><div class="tiny" id="gap">값을 입력하고 계산해보세요.</div></div>
+<div class="result-note" id="note">예: 현재 자산 0원, 월 70만원 저축, 목표 1억원, 5년이면 단순 원금 기준 4,200만원입니다.</div>
+</div>
+</div></main><footer><div class="wrap footer-grid">
+<div><div class="brand"><span class="brand-mark">₩</span><span>월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p>
+<div class="footer-links"><a href="../pages/about.html">소개</a><a href="../pages/guide.html">이용안내</a><a href="../pages/privacy.html">개인정보처리방침</a><a href="../pages/disclaimer.html">면책안내</a></div>
+</div>
+<div>본 사이트의 계산 결과는 입력값에 따른 단순 시뮬레이션이며 투자, 세무, 대출 또는 부동산 관련 전문적 조언을 의미하지 않습니다. 실제 의사결정 전에는 최신 공식 정보와 개인별 조건을 확인하세요.</div>
+</div></footer>
+<script src="../assets/common.js"></script><script>
+function calcAsset(){
+let a=W.n('assets'),m=W.n('saving')+W.n('extra'),t=W.n('target'),y=W.n('years'),r=W.n('rate');
+if(t<=0||y<=0) return alert('목표금액과 목표기간을 확인해주세요.');
+let f=W.fv(a,m,y,r),rat=f/t*100,yg=W.yearsToGoal(a,m,t,r),req=W.requiredMonthly(a,t,y,r);
+future.textContent=W.money(f);futureSub.textContent=`월 ${W.money(m)} 적립 · 연 ${r}% 가정`;ratio.textContent=rat.toFixed(1)+'%';
+toGoal.textContent=Number.isFinite(yg)?(yg<1?Math.ceil(yg*12)+'개월':yg.toFixed(1)+'년'):'계산 불가';need.textContent=W.money(req);
+ptext.textContent=rat.toFixed(1)+'%';pbar.style.width=Math.min(100,rat)+'%';gap.textContent=f<t?`목표까지 약 ${W.money(t-f)}이 더 필요합니다.`:'입력한 가정에서는 목표금액을 넘어섭니다.';
+note.textContent=`현재 속도를 유지하면 ${y}년 뒤 예상자산은 ${W.money(f)}입니다.`;
+}</script></body></html>

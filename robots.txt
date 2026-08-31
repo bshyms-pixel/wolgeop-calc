@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# 실제 도메인을 연결한 뒤 아래 Sitemap 주소를 수정하세요.
+Sitemap: https://YOUR-DOMAIN/sitemap.xml
