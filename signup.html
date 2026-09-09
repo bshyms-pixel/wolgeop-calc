@@ -1,0 +1,47 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>회원가입 | 월급계산소</title><meta name="description" content="내 돈의 현재와 미래를 연결하는 한국 직장인 재무관리 서비스"><link rel="stylesheet" href="styles.css"></head>
+<body data-page="signup">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="brandG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#brandG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">홈</a>
+    <a href="assets.html">내 자산</a>
+    <a href="goals.html">목표</a>
+    <a href="budget.html">가계부</a>
+    <a href="calculators.html">계산기</a>
+    <a href="simulator.html">시뮬레이션</a>
+    <a href="report.html">리포트</a>
+  </nav>
+  <div class="auth-nav"><a class="login-link" href="analytics.html">운영자 분석</a><a class="auth-btn" href="onboarding.html">내 숫자 입력</a></div>
+  <button class="mobile-menu-btn" type="button" aria-label="메뉴">☰</button>
+</header>
+<div class="mobile-menu hidden">
+  <a href="index.html">홈</a><a href="assets.html">내 자산</a><a href="goals.html">목표</a><a href="budget.html">가계부</a>
+  <a href="calculators.html">계산기</a><a href="simulator.html">시뮬레이션</a><a href="report.html">리포트</a><a href="analytics.html">운영자 분석</a>
+</div>
+<main>
+<section class="auth-page">
+  <div class="auth-copy"><span class="eyebrow">MY WOLGEUP</span><h1>한 번 입력하고<br>계속 이어서 계산하세요.</h1><p>회원이 되면 내 자산·목표·계산 설정을 계정에 저장하는 구조로 확장됩니다.</p><div class="auth-benefits"><span>✓ 내 정보 저장</span><span>✓ 모든 기기 연동 예정</span><span>✓ PRO 데이터 백업</span></div></div>
+  <form class="signup-card" id="signupForm">
+    <div class="signup-head"><h2>회원가입</h2><p>월급계산소를 무료로 시작하세요.</p></div>
+    <label>이메일<input type="email" id="signupEmail" placeholder="name@example.com" required></label>
+    <label>비밀번호<input type="password" id="signupPassword" placeholder="8자 이상" minlength="8" required></label>
+    <label>비밀번호 확인<input type="password" id="signupPassword2" placeholder="한 번 더 입력" minlength="8" required></label>
+    <label class="check-row"><input type="checkbox" required><span>서비스 이용약관 및 개인정보처리방침에 동의합니다.</span></label>
+    <button class="btn primary full" type="submit">무료 계정 만들기</button>
+    <div class="divider"><span>또는</span></div>
+    <button class="social-btn" type="button">N 네이버로 계속하기 <small>예정</small></button>
+    <button class="social-btn" type="button">K 카카오로 계속하기 <small>예정</small></button>
+    <p class="form-bottom">이미 계정이 있나요? <a href="#">로그인</a></p>
+    <div id="signupMessage" class="signup-message hidden"></div>
+  </form>
+</section>
+</main><footer><div class="footer-inner"><div><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="footG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#footG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p></div><small>© 2026 월급계산소 · 계산 및 분석 결과는 참고용입니다. · <a href="analytics.html">운영자 분석</a></small></div></footer><script src="app.js"></script></body></html>

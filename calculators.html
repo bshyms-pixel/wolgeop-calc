@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>계산기 | 월급계산소</title><meta name="description" content="내 돈의 현재와 미래를 연결하는 한국 직장인 재무관리 서비스"><link rel="stylesheet" href="styles.css"></head>
+<body data-page="calculators">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="brandG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#brandG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">홈</a>
+    <a href="assets.html">내 자산</a>
+    <a href="goals.html">목표</a>
+    <a href="budget.html">가계부</a>
+    <a href="calculators.html">계산기</a>
+    <a href="simulator.html">시뮬레이션</a>
+    <a href="report.html">리포트</a>
+  </nav>
+  <div class="auth-nav"><a class="login-link" href="analytics.html">운영자 분석</a><a class="auth-btn" href="onboarding.html">내 숫자 입력</a></div>
+  <button class="mobile-menu-btn" type="button" aria-label="메뉴">☰</button>
+</header>
+<div class="mobile-menu hidden">
+  <a href="index.html">홈</a><a href="assets.html">내 자산</a><a href="goals.html">목표</a><a href="budget.html">가계부</a>
+  <a href="calculators.html">계산기</a><a href="simulator.html">시뮬레이션</a><a href="report.html">리포트</a><a href="analytics.html">운영자 분석</a>
+</div>
+<main>
+<section class="page-hero compact">
+  <span class="eyebrow">CALCULATORS</span>
+  <h1>계산기</h1>
+  <p>직장인의 실제 돈 고민을 계산하는 도구를 하나씩 추가합니다. 무료 도구로 유입을 만들고 고급 분석은 PRO에서 제공합니다.</p>
+</section>
+<section class="page-wrap calculator-hub">
+  <div class="calculator-profile-strip">
+    <div><small>내 MONEY MAP 기준</small><strong id="calcProfileIncome">월 실수령 ₩3,000,000</strong><p id="calcProfileNote">입력한 월급을 각 계산기에서 자동으로 활용합니다.</p></div>
+    <a class="btn secondary" href="onboarding.html">내 숫자 입력·수정</a>
+  </div>
+
+  <div class="filter-pills" id="calcFilters">
+    <button class="pill active" data-filter="all">전체</button><button class="pill" data-filter="asset">저축·자산</button><button class="pill" data-filter="car">자동차</button><button class="pill" data-filter="housing">주거·대출</button>
+  </div>
+
+  <article class="live-calculator" id="goal-calc" data-category="asset">
+    <div class="live-calc-head"><div class="live-icon">💰</div><div><small>FREE · GOAL</small><h2>1억 만들기 계산기</h2><p>현재 순자산과 월 저축액으로 1억까지 걸리는 시간을 계산합니다.</p></div></div>
+    <div class="live-calc-grid">
+      <div class="calc-input-panel">
+        <label>현재 순자산<div class="currency-field"><input id="goalCurrent" class="comma-input" inputmode="numeric" value="0"><span>원</span></div></label>
+        <label>매월 저축·투자<div class="currency-field"><input id="goalMonthly" class="comma-input" inputmode="numeric" value="700,000"><span>원</span></div></label>
+        <label>목표금액<div class="currency-field"><input id="goalTarget" class="comma-input" inputmode="numeric" value="100,000,000"><span>원</span></div></label>
+      </div>
+      <div class="calc-result-panel"><small>현재 속도로</small><strong id="goalCalcTime">-</strong><p id="goalCalcDate">-</p><div class="result-insight" id="goalCalcInsight">숫자를 입력하면 결과가 바로 바뀝니다.</div><button class="text-action" id="saveGoalFromCalc" type="button">이 계산을 내 목표로 저장 +</button></div>
+    </div>
+  </article>
+
+  <article class="live-calculator" id="car-calc" data-category="car">
+    <div class="live-calc-head"><div class="live-icon">🚗</div><div><small>FREE · CAR</small><h2>자동차 구매 부담 계산기</h2><p>차값만이 아니라 할부·보험·유류·주차·정비를 월급과 함께 봅니다.</p></div></div>
+    <div class="live-calc-grid">
+      <div class="calc-input-panel two-col-inputs">
+        <label>차량가격<div class="currency-field"><input id="carPrice" class="comma-input" inputmode="numeric" value="35,000,000"><span>원</span></div></label>
+        <label>선수금<div class="currency-field"><input id="carDown" class="comma-input" inputmode="numeric" value="10,000,000"><span>원</span></div></label>
+        <label>할부기간<div class="simple-field"><input id="carMonths" type="number" min="1" max="120" value="60"><span>개월</span></div></label>
+        <label>할부금리<div class="simple-field"><input id="carRate" type="number" min="0" max="30" step="0.1" value="5"><span>%</span></div></label>
+        <label>월 유지비<div class="currency-field"><input id="carRunning" class="comma-input" inputmode="numeric" value="400,000"><span>원</span></div><small>보험·유류·주차·정비 월 환산</small></label>
+        <label>월 실수령액<div class="currency-field"><input id="carIncome" class="comma-input" inputmode="numeric" value="3,000,000"><span>원</span></div></label>
+      </div>
+      <div class="calc-result-panel"><small>예상 월 자동차 총지출</small><strong id="carMonthlyTotal">-</strong><p><span id="carPayment">할부 -</span> + 유지비</p><div class="burden-meter"><i id="carBurdenBar"></i></div><div class="result-insight" id="carVerdict">-</div><p class="calc-subresult" id="carRemaining">-</p></div>
+    </div>
+  </article>
+
+  <article class="live-calculator" id="loan-calc" data-category="housing">
+    <div class="live-calc-head"><div class="live-icon">🏠</div><div><small>FREE · LOAN</small><h2>주택대출 월 상환액 계산기</h2><p>원리금균등 기준 월 상환액과 대출 후 월급 잔액을 동시에 봅니다.</p></div></div>
+    <div class="live-calc-grid">
+      <div class="calc-input-panel two-col-inputs">
+        <label>대출금액<div class="currency-field"><input id="loanPrincipal" class="comma-input" inputmode="numeric" value="300,000,000"><span>원</span></div></label>
+        <label>연 금리<div class="simple-field"><input id="loanRate" type="number" min="0" max="30" step="0.1" value="4"><span>%</span></div></label>
+        <label>상환기간<div class="simple-field"><input id="loanYears" type="number" min="1" max="50" value="30"><span>년</span></div></label>
+        <label>월 실수령액<div class="currency-field"><input id="loanIncome" class="comma-input" inputmode="numeric" value="3,000,000"><span>원</span></div></label>
+      </div>
+      <div class="calc-result-panel"><small>예상 월 상환액</small><strong id="loanMonthly">-</strong><p id="loanTotalInterest">-</p><div class="burden-meter"><i id="loanBurdenBar"></i></div><div class="result-insight" id="loanVerdict">-</div><p class="calc-subresult" id="loanRemaining">-</p></div>
+    </div>
+  </article>
+
+  <div class="calc-disclaimer"><b>계산 결과 안내</b><p>위 결과는 생활 의사결정을 돕기 위한 단순 시뮬레이션입니다. 실제 금융상품의 금리·세금·심사·수수료·상환방식에 따라 달라질 수 있습니다.</p></div>
+</section>
+</main><footer><div class="footer-inner"><div><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="footG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#footG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p></div><small>© 2026 월급계산소 · 계산 및 분석 결과는 참고용입니다. · <a href="analytics.html">운영자 분석</a></small></div></footer><script src="app.js"></script></body></html>

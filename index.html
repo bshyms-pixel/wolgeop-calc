@@ -1,49 +1,140 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>월급계산소 | 직장인 돈 계산기</title><meta name="description" content="월급, 자산, 1억 모으기, 내집마련 등 직장인의 돈 고민을 직접 계산하는 무료 계산기입니다.">
-<link rel="stylesheet" href="assets/style.css"></head><body>
-<header><div class="wrap"><nav>
-<a class="brand" href="index.html"><span class="brand-mark">₩</span><span>월급계산소</span></a>
-<div class="navlinks">
-<a href="#calculators">계산기</a>
-<a href="pages/about.html">소개</a>
-<a href="pages/guide.html">이용안내</a>
+<title>홈 | 월급계산소</title><meta name="description" content="내 돈의 현재와 미래를 연결하는 한국 직장인 재무관리 서비스"><link rel="stylesheet" href="styles.css"></head>
+<body data-page="home">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="brandG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#brandG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">홈</a>
+    <a href="assets.html">내 자산</a>
+    <a href="goals.html">목표</a>
+    <a href="budget.html">가계부</a>
+    <a href="calculators.html">계산기</a>
+    <a href="simulator.html">시뮬레이션</a>
+    <a href="report.html">리포트</a>
+  </nav>
+  <div class="auth-nav"><a class="login-link" href="analytics.html">운영자 분석</a><a class="auth-btn" href="onboarding.html">내 숫자 입력</a></div>
+  <button class="mobile-menu-btn" type="button" aria-label="메뉴">☰</button>
+</header>
+<div class="mobile-menu hidden">
+  <a href="index.html">홈</a><a href="assets.html">내 자산</a><a href="goals.html">목표</a><a href="budget.html">가계부</a>
+  <a href="calculators.html">계산기</a><a href="simulator.html">시뮬레이션</a><a href="report.html">리포트</a><a href="analytics.html">운영자 분석</a>
 </div>
-</nav></div></header>
 <main>
-<section class="hero"><div class="wrap hero-grid">
-<div><span class="eyebrow">직장인의 돈 고민을 숫자로 계산합니다</span>
-<h1>월급은 숫자,<br><em>생활은 계산</em>입니다.</h1>
-<p>막연한 재테크 대신 내 연봉, 자산, 저축액과 목표를 직접 넣어보세요. 지금 속도로 어디까지 갈 수 있는지 계산해드립니다.</p>
-<div class="hero-actions"><a class="btn primary" href="calculators/asset.html">내 자산 계산하기</a><a class="btn secondary" href="#calculators">계산기 전체보기</a></div>
-</div>
-<div class="card"><h2>지금 바로 계산해보세요</h2><p class="sub">회원가입 없이 무료로 사용할 수 있습니다.</p>
-<div class="quick-grid">
-<a class="quick-card" href="calculators/asset.html"><span class="icon">₩</span><b>자산 목표 계산기</b><p>목표금액까지 몇 년 걸릴까?</p></a>
-<a class="quick-card" href="calculators/oneeok.html"><span class="icon">1</span><b>1억 모으기</b><p>월 저축액별 1억 도달 시점</p></a>
-<a class="quick-card" href="calculators/house.html"><span class="icon">⌂</span><b>내집마련 계산기</b><p>내 자본과 대출을 합쳐 구매력 계산</p></a>
-<a class="quick-card" href="calculators/savings.html"><span class="icon">↗</span><b>저축 시나리오</b><p>월 +50·100만원의 차이</p></a>
-</div></div>
-</div></section>
+<section class="money-home">
+  <section class="money-hero">
+    <div class="hero-copy">
+      <span class="eyebrow">MY MONEY, MY FUTURE</span>
+      <h1>내 돈의 현재에서<br><em>원하는 미래까지.</em></h1>
+      <p>월급을 한 번 입력하면 차·집·저축·대출까지 같은 숫자로 이어서 계산합니다.<br>입력한 값은 현재 브라우저에만 저장되며 언제든 다시 바꿀 수 있습니다.</p>
+      <div class="hero-actions"><a class="btn primary" href="onboarding.html">내 숫자로 시작하기</a><a class="btn ghost" href="calculators.html">바로 계산해보기 →</a></div>
+      <div class="trust-row"><span>✓ 광고 없는 핵심 화면</span><span>✓ 내 데이터 중심</span><span>✓ 무료 계산부터 시작</span></div><div id="homeProfileNotice" class="home-profile-notice hidden"></div>
+    </div>
+    <div class="hero-visual">
+      <div class="mini-money-card">
+        <div class="mini-top"><span>나의 순자산</span><small>DEMO</small></div><strong>₩12,400,000</strong><b>이번 달 +₩1,070,000</b>
+        <div class="mini-line"><svg viewBox="0 0 380 120" preserveAspectRatio="none"><path d="M5 103 C70 98,88 80,130 82 S200 53,235 62 S300 26,375 18" fill="none" stroke="#F3B333" stroke-width="4"/><path d="M5 103 C70 98,88 80,130 82 S200 53,235 62 S300 26,375 18 L375 120 L5 120 Z" fill="url(#fade)"/><defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F3B333" stop-opacity=".2"/><stop offset="1" stop-color="#F3B333" stop-opacity="0"/></linearGradient></defs></svg></div>
+        <div class="mini-goal"><span>🏠 내 집 마련</span><b>18%</b></div><div class="progress dark-track"><i style="width:18%"></i></div>
+      </div>
+    </div>
+  </section>
 
-<section id="calculators" class="soft"><div class="wrap">
-<div class="section-head"><h2>월급계산소 계산기</h2><p>하나씩 기능을 늘려가며 실제 생활에 필요한 계산기를 모아갑니다.</p></div>
-<div class="grid3">
-<a class="quick-card" href="calculators/asset.html"><span class="icon">₩</span><b>자산 목표 계산기</b><p>현재 자산, 저축액, 수익률로 미래 자산을 계산합니다.</p></a>
-<a class="quick-card" href="calculators/oneeok.html"><span class="icon">1</span><b>1억 모으기 계산기</b><p>1억원까지 필요한 기간과 월 적립액을 계산합니다.</p></a>
-<a class="quick-card" href="calculators/house.html"><span class="icon">⌂</span><b>내집마련 계산기</b><p>자기자본과 예상 대출을 합쳐 주택 구매력을 확인합니다.</p></a>
-<a class="quick-card" href="calculators/savings.html"><span class="icon">↗</span><b>저축 시나리오 계산기</b><p>저축액을 늘리면 몇 년 뒤 자산이 얼마나 달라지는지 비교합니다.</p></a>
-</div></div></section>
 
-<section><div class="wrap">
-<div class="section-head"><h2>왜 월급계산소인가요?</h2><p>“될까?”를 고민하는 시간을 줄이고, 먼저 숫자를 확인하는 습관을 만들기 위해 만들었습니다.</p></div>
-<div class="grid3">
-<div class="feature"><span class="icon">✓</span><b>쉽게</b><p>복잡한 금융용어보다 직장인이 이해하기 쉬운 숫자로 보여줍니다.</p></div>
-<div class="feature"><span class="icon">↻</span><b>비교해서</b><p>현재 속도와 더 나은 시나리오를 나란히 비교할 수 있습니다.</p></div>
-<div class="feature"><span class="icon">⌁</span><b>연결해서</b><p>블로그 콘텐츠와 계산기를 연결해 ‘내 경우’를 직접 확인할 수 있게 합니다.</p></div>
-</div></div></section>
-</main><footer><div class="wrap footer-grid">
-<div><div class="brand"><span class="brand-mark">₩</span><span>월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p>
-<div class="footer-links"><a href="pages/about.html">소개</a><a href="pages/guide.html">이용안내</a><a href="pages/privacy.html">개인정보처리방침</a><a href="pages/disclaimer.html">면책안내</a></div>
-</div>
-<div>본 사이트의 계산 결과는 입력값에 따른 단순 시뮬레이션이며 투자, 세무, 대출 또는 부동산 관련 전문적 조언을 의미하지 않습니다. 실제 의사결정 전에는 최신 공식 정보와 개인별 조건을 확인하세요.</div>
-</div></footer></body></html>
+  <section class="quick-start-section" id="quick-start">
+    <div class="section-copy center"><span class="eyebrow">QUICK DECISION</span><h2>월급 하나로 생활 선택까지 계산하세요.</h2><p>저장된 내 월급을 기준으로 자주 쓰는 계산기로 바로 이어집니다.</p></div>
+    <div class="quick-income-card">
+      <div><small>현재 기준 월 실수령액</small><strong id="quickMonthlyIncome">₩3,000,000</strong><p id="quickIncomeHint">내 숫자를 입력하면 여기와 모든 계산기에 자동 반영됩니다.</p></div>
+      <a class="btn secondary" href="onboarding.html">내 숫자 수정</a>
+    </div>
+    <div class="quick-tool-grid">
+      <a href="calculators.html#goal-calc"><span>💰</span><div><b>1억 만들기</b><p>현재 속도로 몇 년 걸리는지</p></div><em>계산 →</em></a>
+      <a href="calculators.html#car-calc"><span>🚗</span><div><b>자동차 구매 부담</b><p>할부+유지비가 월급의 몇 %인지</p></div><em>계산 →</em></a>
+      <a href="calculators.html#loan-calc"><span>🏠</span><div><b>주담대 월 상환액</b><p>대출 후 실제로 얼마가 남는지</p></div><em>계산 →</em></a>
+      <a href="simulator.html"><span>↗</span><div><b>미래 바꿔보기</b><p>월 10만원 차이가 몇 년 뒤 얼마인지</p></div><em>시뮬레이션 →</em></a>
+    </div>
+  </section>
+
+  <section class="map-demo" id="demo-map">
+    <div class="dashboard-head">
+      <div><span class="eyebrow" id="homeMapEyebrow">MONEY MAP · SAMPLE</span><h2 id="homeMapTitle">내 돈은 지금 어디쯤 와 있을까?</h2><p id="homeMapDesc">샘플 데이터입니다. 내 숫자를 입력하면 이 화면이 나만의 MONEY MAP으로 바뀝니다.</p></div>
+      <a href="onboarding.html" class="btn secondary">내 MONEY MAP 만들기</a>
+    </div>
+
+    <div class="metric-row">
+      <article><small>현재 순자산</small><strong id="homeNetWorth">₩12,400,000</strong><span id="homeNetWorthNote" class="up">▲ 이번 달 9.4%</span></article>
+      <article><small>월 저축·투자</small><strong id="homeSaving">+₩1,070,000</strong><span>현재 입력 기준</span></article>
+      <article><small>월 저축률</small><strong id="homeSavingRate">37.8%</strong><span id="homeSavingRateNote" class="up">▲ 지난달 +4.1%p</span></article>
+      <article><small>1억까지</small><strong id="homeTo100m">5년 11개월</strong><span>현재 속도 기준</span></article>
+    </div>
+
+    <div class="map-grid">
+      <article class="timeline-card dashboard-card">
+        <div class="card-title"><div><small>NET WORTH FORECAST</small><h3>자산 성장 경로</h3></div><div class="legend"><span><i></i>현재 경로</span><span><i class="gold"></i>개선 경로</span></div></div>
+        <div class="chart-area">
+          <div class="chart-y"><span>3억</span><span>2억</span><span>1억</span><span>0</span></div>
+          <div class="chart-plot">
+            <div class="gridline g1"></div><div class="gridline g2"></div><div class="gridline g3"></div>
+            <svg viewBox="0 0 700 250" preserveAspectRatio="none">
+              <path d="M0 230 C110 218 180 198 250 178 S390 135 460 105 S590 64 700 37" class="forecast-current"/>
+              <path d="M0 230 C110 214 175 187 250 155 S390 102 460 73 S590 35 700 14" class="forecast-better"/>
+            </svg>
+            <div class="event e1"><i>✓</i><b>2028</b><span>자동차 할부 종료</span></div>
+            <div class="event e2"><i>1억</i><b>2032</b><span>1억원 돌파 예상</span></div>
+            <div class="event e3"><i>⌂</i><b>2036</b><span>내집마련 자기자본</span></div>
+          </div>
+          <div class="chart-x"><span>2026</span><span>2028</span><span>2030</span><span>2032</span><span>2034</span><span>2036</span></div>
+        </div>
+        <div class="forecast-callout"><span>현재 경로보다</span><strong>월 50만원을 더 자산으로 전환하면 목표가 약 1년 4개월 빨라져요.</strong><a href="simulator.html">내 조건으로 바꿔보기 →</a></div>
+      </article>
+
+      <aside class="goal-side dashboard-card">
+        <div class="card-title"><div><small>MY GOAL</small><h3>가장 중요한 목표</h3></div><a href="goals.html">전체 목표 →</a></div>
+        <div class="goal-icon" id="homeGoalIcon">🏠</div><h4 id="homeGoalName">서울 내 집 마련</h4><div class="goal-money"><strong id="homeGoalCurrent">₩54,000,000</strong><span id="homeGoalTarget">/ ₩300,000,000</span></div>
+        <div class="progress light-track"><i id="homeGoalBar" style="width:18%"></i></div><div class="goal-labels"><span id="homeGoalPct">18% 달성</span><span id="homeGoalDate">예상 2036.04</span></div>
+        <div class="goal-delay"><small id="homeGoalStatusLabel">목표 분석</small><strong id="homeGoalStatus">1년 7개월 늦어요</strong><p id="homeGoalAdvice">지금부터 월 +38만원을 추가하면 목표 일정에 맞출 수 있어요.</p></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="monthly-section">
+    <div class="section-copy"><span class="eyebrow">THIS MONTH</span><h2>이번 달이 미래를 얼마나 바꿨을까요?</h2><p>가계부의 숫자를 단순 집계하지 않고 목표와 연결합니다.</p></div>
+    <div class="monthly-grid">
+      <div class="monthly-card">
+        <div><small>수입</small><strong>₩3,120,000</strong></div><span>−</span><div><small>지출</small><strong>₩1,940,000</strong></div><span>=</span><div class="highlight"><small>저축·투자</small><strong>₩1,180,000</strong></div>
+      </div>
+      <div class="days-card"><span>🏠</span><div><small>이번 달 결과로</small><strong>내 집 마련이 <em>6일</em> 가까워졌어요.</strong></div></div>
+    </div>
+  </section>
+
+  <section class="insight-section">
+    <div class="section-copy"><span class="eyebrow">MONEY INSIGHT · PRO PREVIEW</span><h2>숫자를 보여주는 데서 끝내지 않습니다.</h2><p>내 데이터의 변화에서 중요한 것만 찾아 다음 행동으로 연결합니다.</p></div>
+    <div class="insight-grid">
+      <article class="ai-insight"><div class="ai-label"><span>✦</span> MONEY AI</div><h3>이번 달에는 소비보다<br>수입 증가가 더 중요했어요.</h3><p>식비가 3개월 평균보다 14만원 증가했지만 추가수입이 32만원 늘어 전체 저축률은 4.1%p 상승했습니다.</p><div class="ai-action"><small>추천 행동</small><b>현재 생활비를 무리하게 줄이기보다 추가수입의 70% 이상을 목표자산으로 전환해 보세요.</b></div></article>
+      <article class="whatif-preview"><span class="pro-badge">PRO</span><h3>조금 바꾸면 얼마나 달라질까요?</h3>
+        <div class="whatif-row"><span>월 저축 +30만원</span><b>목표 9개월 단축</b></div><div class="whatif-row"><span>월 추가수입 +50만원</span><b>목표 1년 4개월 단축</b></div><div class="whatif-row negative"><span>4천만원 차량 구매</span><b>목표 2년+ 지연</b></div>
+        <a href="simulator.html">내 미래 직접 시뮬레이션 →</a></article>
+    </div>
+  </section>
+
+  <section class="branch-section">
+    <div class="section-copy center"><span class="eyebrow">ONE HOME, MANY TOOLS</span><h2>MONEY MAP에서 모든 기능으로 이어집니다.</h2><p>계산기는 유입을 만들고, 데이터는 연결되고, 리포트는 다음 행동을 알려줍니다.</p></div>
+    <div class="branch-grid">
+      <a href="assets.html"><span>01</span><div class="branch-icon">◎</div><h3>내 자산</h3><p>자산과 부채를 모아 진짜 순자산을 확인</p><b>살펴보기 →</b></a>
+      <a href="goals.html"><span>02</span><div class="branch-icon">⌁</div><h3>목표</h3><p>집·1억·자동차·여행 등 원하는 미래를 설정</p><b>목표 만들기 →</b></a>
+      <a href="budget.html"><span>03</span><div class="branch-icon">▤</div><h3>DIY 가계부</h3><p>내 생활에 맞는 수입·지출 구조를 직접 설계</p><b>PRO 미리보기 →</b></a>
+      <a href="calculators.html"><span>04</span><div class="branch-icon">＋−</div><h3>계산기</h3><p>연봉·저축·주거·자동차·대출을 빠르게 계산</p><b>무료 계산하기 →</b></a>
+      <a href="simulator.html"><span>05</span><div class="branch-icon">↗</div><h3>시뮬레이션</h3><p>선택 하나가 미래 자산과 목표일에 미치는 영향</p><b>미래 바꿔보기 →</b></a>
+      <a href="report.html"><span>06</span><div class="branch-icon">✦</div><h3>MONEY REPORT</h3><p>월간·연간 변화를 자동 분석해 행동으로 연결</p><b>PRO 미리보기 →</b></a>
+    </div>
+  </section>
+
+  <section class="final-cta"><span class="eyebrow">START YOUR MONEY MAP</span><h2>돈을 기록하는 것보다<br>어디로 가는지 아는 게 먼저입니다.</h2><p>무료로 현재 위치를 계산하고, 나만의 목표까지 가는 경로를 확인해 보세요.</p><a class="btn primary light-btn" href="onboarding.html">내 MONEY MAP 만들기</a></section>
+</section>
+</main><footer><div class="footer-inner"><div><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 52 52">
+    <defs><linearGradient id="footG" x1="8" y1="44" x2="45" y2="7" gradientUnits="userSpaceOnUse"><stop stop-color="#17365D"/><stop offset="1" stop-color="#275B8E"/></linearGradient></defs>
+    <rect x="3" y="3" width="46" height="46" rx="15" fill="url(#footG)"/>
+    <path d="M14.5 34.5V26.5M23.5 34.5V21.5M32.5 34.5V17.5" class="mark-bars"/>
+    <path d="M13.5 38H38.5" class="mark-base"/><path d="M35.5 14.5L39.5 10.5M39.5 10.5H35.8M39.5 10.5V14.2" class="mark-arrow"/></svg></span><span class="brand-text">월급계산소</span></div><p>월급은 숫자, 생활은 계산입니다.</p></div><small>© 2026 월급계산소 · 계산 및 분석 결과는 참고용입니다. · <a href="analytics.html">운영자 분석</a></small></div></footer><script src="app.js"></script></body></html>
